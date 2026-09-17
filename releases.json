@@ -8,6 +8,13 @@
       "path": "packs/user.slate/1.0.0",
       "description": "A small neutral dark theme demonstrating pack distribution.",
       "minMalleaVersion": "0.0.0"
+    },
+    {
+      "id": "user.slate",
+      "version": "1.0.1",
+      "path": "packs/user.slate/1.0.1",
+      "description": "Slate",
+      "minMalleaVersion": "0.0.0"
     }
   ]
 }
