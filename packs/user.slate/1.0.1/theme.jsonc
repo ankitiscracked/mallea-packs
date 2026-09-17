@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "kind": "theme",
+  "id": "user.slate",
+  "title": "Slate",
+  "scheme": "dark",
+  "ui": {
+    "colors": {
+      "background": "#17191c",
+      "surface": "#202328",
+      "text": "#eceff4",
+      "accent": "#b4cdf8"
+    }
+  },
+  "terminal": {
+    "foreground": "#eceff4",
+    "background": "#17191c",
+    "cursor": "#a8c7fa",
+    "selection": "#344665",
+    "ansi": [
+      "#17191c",
+      "#f28b82",
+      "#81c995",
+      "#fdd663",
+      "#8ab4f8",
+      "#c58af9",
+      "#78d9ec",
+      "#dadce0",
+      "#5f6368",
+      "#f6aea9",
+      "#a8dab5",
+      "#fde293",
+      "#aecbfa",
+      "#d7aefb",
+      "#a1e4ef",
+      "#ffffff"
+    ]
+  }
+}
