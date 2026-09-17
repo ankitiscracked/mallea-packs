@@ -5,10 +5,10 @@
       "id": "user.slate",
       "kind": "theme",
       "title": "Slate",
-      "description": "A small neutral dark theme demonstrating pack distribution.",
-      "version": "1.0.0",
-      "url": "https://github.com/ankitiscracked/mallea-packs/releases/download/user.slate-v1.0.0/user.slate-v1.0.0.zip",
-      "sha256": "e14fd6df83272727b5575f65fddf2ccb33bb48b1a855fe4c4bbbd2200994bf6c",
+      "description": "Slate",
+      "version": "1.0.1",
+      "url": "https://github.com/ankitiscracked/mallea-packs/releases/download/user.slate-v1.0.1/user.slate-v1.0.1.zip",
+      "sha256": "7045c2501bca5dafcb079c7bd82bb901a7ae1deda5b4f95582b53f88d86913cf",
       "minMalleaVersion": "0.0.0"
     }
   ]
