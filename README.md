@@ -42,7 +42,8 @@ On main, CI validates again, publishes immutable versioned ZIPs, then atomically
 commits `catalog.json` on the dedicated `catalog` branch. The publishing CLI emits
 `status: "published"` only after all
 uploads succeed. Existing version bytes must match exactly; revisions require a
-new version. Failed uploads leave the preceding catalog available.
+new version. Failed uploads leave the preceding catalog available. Older catalog
+snapshots cannot remove published packs or downgrade their versions.
 
 Catalog URL:
 `https://raw.githubusercontent.com/ankitiscracked/mallea-packs/catalog/catalog.json`
