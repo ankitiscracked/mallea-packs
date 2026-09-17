@@ -6,9 +6,9 @@
       "kind": "theme",
       "title": "Slate",
       "description": "Slate",
-      "version": "1.0.1",
-      "url": "https://github.com/ankitiscracked/mallea-packs/releases/download/user.slate-v1.0.1/user.slate-v1.0.1.zip",
-      "sha256": "7045c2501bca5dafcb079c7bd82bb901a7ae1deda5b4f95582b53f88d86913cf",
+      "version": "1.0.2",
+      "url": "https://github.com/ankitiscracked/mallea-packs/releases/download/user.slate-v1.0.2/user.slate-v1.0.2.zip",
+      "sha256": "e5277f8ea72fb1fbcc2bfe5362e5eae537f95628a92200d05c3d2b44632ac064",
       "minMalleaVersion": "0.0.0"
     }
   ]
