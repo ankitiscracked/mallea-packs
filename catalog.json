@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "id": "user.slate",
+      "kind": "theme",
+      "title": "Slate",
+      "description": "A small neutral dark theme demonstrating pack distribution.",
+      "version": "1.0.0",
+      "url": "https://github.com/ankitiscracked/mallea-packs/releases/download/user.slate-v1.0.0/user.slate-v1.0.0.zip",
+      "sha256": "e14fd6df83272727b5575f65fddf2ccb33bb48b1a855fe4c4bbbd2200994bf6c",
+      "minMalleaVersion": "0.0.0"
+    }
+  ]
+}
