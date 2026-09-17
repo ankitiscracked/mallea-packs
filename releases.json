@@ -15,6 +15,13 @@
       "path": "packs/user.slate/1.0.1",
       "description": "Slate",
       "minMalleaVersion": "0.0.0"
+    },
+    {
+      "id": "user.slate",
+      "version": "1.0.2",
+      "path": "packs/user.slate/1.0.2",
+      "description": "Slate",
+      "minMalleaVersion": "0.0.0"
     }
   ]
 }
