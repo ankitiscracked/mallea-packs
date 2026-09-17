@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "downloadBaseUrl": "https://github.com/ankitiscracked/mallea-packs/releases/download",
+  "releases": [
+    {
+      "id": "user.slate",
+      "version": "1.0.0",
+      "path": "packs/user.slate/1.0.0",
+      "description": "A small neutral dark theme demonstrating pack distribution.",
+      "minMalleaVersion": "0.0.0"
+    }
+  ]
+}

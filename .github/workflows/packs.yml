@@ -1,0 +1,68 @@
+name: Validate and publish packs
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: packs-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: packs
+          persist-credentials: false
+      - name: Require private validator access
+        env:
+          HAS_VALIDATOR_KEY: ${{ secrets.MALLEA_READ_SSH_KEY != '' }}
+        run: test "$HAS_VALIDATOR_KEY" = true || { echo 'Private validator access missing. Maintainer must validate a reviewed branch.'; exit 1; }
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: ankitiscracked/mallea
+          ref: 5e71941abde415b08b3963be578bc178fd4ca2f9
+          ssh-key: ${{ secrets.MALLEA_READ_SSH_KEY }}
+          path: mallea
+          persist-credentials: false
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.0
+      - run: bun install --frozen-lockfile
+        working-directory: mallea
+      - name: Validate source and exact release ZIPs
+        run: bun run mallea/tools/packs/publish.ts build packs dist
+
+  publish:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: packs
+          persist-credentials: false
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: ankitiscracked/mallea
+          ref: 5e71941abde415b08b3963be578bc178fd4ca2f9
+          ssh-key: ${{ secrets.MALLEA_READ_SSH_KEY }}
+          path: mallea
+          persist-credentials: false
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.0
+      - run: bun install --frozen-lockfile
+        working-directory: mallea
+      - name: Validate, upload immutable ZIPs, then publish catalog
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bun run mallea/tools/packs/publish.ts release packs dist "$GITHUB_REPOSITORY"
